@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+
+            android:id="@+id/new_user_edit_text"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:focusedByDefault="false"
+            android:hint="Enter userName: "
+            android:layout_marginLeft="70dp"
+            />
+
+
+
+        <EditText
+
+            android:id="@+id/new_id_edit_text"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:layout_below="@id/new_user_edit_text"
+            android:hint="Enter ID Number"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="70dp"
+
+            />
+
+
+        <EditText
+            android:id="@+id/new_age_edit_text"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_below="@id/new_id_edit_text"
+            android:layout_marginTop="10dp"
+            android:hint="Enter Age"
+            android:layout_marginLeft="70dp"
+
+            />
+
+        <Button
+            android:id="@+id/new_photoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD A PHOTO"
+            android:layout_below="@id/new_age_edit_text"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="125dp"
+
+            />
+
+
+        <Button
+            android:id="@+id/new_saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ACCEPT"
+            android:layout_below="@id/new_photoBtn"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="140dp"
+            />
+
+
+
+
+        <ImageView
+
+            android:id="@+id/new_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/new_saveBtn"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@id/new_saveBtn"
+            android:layout_marginLeft="30dp"
+
+            />
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

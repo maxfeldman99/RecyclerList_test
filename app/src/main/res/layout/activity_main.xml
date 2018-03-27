@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+
+
+
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD PROFILE"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:id="@+id/add"
+
+
+        />
+
+
+
+    <Button
+
+        android:id="@+id/all_users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MY CONTACTS"
+        android:layout_below="@id/add"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        />
+
+
+
+
+
+
+
+</RelativeLayout>
