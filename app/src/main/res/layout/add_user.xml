@@ -59,7 +59,19 @@
             android:text="ADD A PHOTO"
             android:layout_below="@id/new_age_edit_text"
             android:layout_marginTop="25dp"
-            android:layout_marginLeft="125dp"
+            android:layout_marginLeft="50dp"
+
+            />
+        <Button
+            android:id="@+id/new_school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add COLLEGE"
+            android:layout_toRightOf="@id/new_photoBtn"
+            android:layout_below="@id/new_age_edit_text"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="50dp"
+            android:onClick="showPopUp"
 
             />
 
@@ -84,8 +96,7 @@
             android:layout_height="150dp"
             android:layout_below="@id/new_saveBtn"
             android:layout_marginTop="25dp"
-            android:layout_toRightOf="@id/new_saveBtn"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="110dp"
 
             />
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProjectTitle</string>
+    <string name="HIT">Holon Institute Of Technology</string>
+    <string name="MTA">The Academic College Tel aviv-Jaffa</string>
 </resources>

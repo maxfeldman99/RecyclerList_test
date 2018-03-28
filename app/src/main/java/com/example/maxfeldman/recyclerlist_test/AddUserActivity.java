@@ -6,10 +6,14 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,7 +27,7 @@ import java.util.ArrayList;
  * Created by MAX FELDMAN on 20/03/2018.
  */
 
-public class AddUserActivity extends Activity {
+public class AddUserActivity extends Activity implements android.support.v7.widget.PopupMenu.OnMenuItemClickListener, PopupMenu.OnMenuItemClickListener {
 
     final int PICTURE_REQUEST_CODE = 1;
 
@@ -38,10 +42,56 @@ public class AddUserActivity extends Activity {
 
     Button photo_btn;
     Button save_user_btn;
+    Button college_btn;
 
     ArrayList<User> userArrayList;
 
     SingletonList listOfUsers;
+
+    public void showPopUp(View view){
+        PopupMenu popupMenu = new PopupMenu(this,view);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.inflate(R.menu.pop_menu);
+        popupMenu.show();
+
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.HIT: item.setChecked(true);
+            case R.id.MTA: item.setChecked(true);
+                if (item.isChecked()) item.setChecked(false);
+                else item.setChecked(true);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu2, menu);
+//        return super.onCreateOptionsMenu(menu);
+//
+//
+//    }
+//
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.HIT: item.setChecked(true);
+//            case R.id.MTA: item.setChecked(true);
+//                if (item.isChecked()) item.setChecked(false);
+//                else item.setChecked(true);
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +122,9 @@ public class AddUserActivity extends Activity {
 
                 user.setPhoto(photo);
                 listOfUsers.addUser(user);
+
+                Intent intent = new Intent(AddUserActivity.this,ListOfUsers.class);
+                startActivity(intent);
 
 
 
@@ -108,6 +161,7 @@ public class AddUserActivity extends Activity {
         photo_btn = findViewById(R.id.new_photoBtn);
         save_user_btn = findViewById(R.id.new_saveBtn);
 
+
         imageView = findViewById(R.id.new_image);
 
         userArrayList = new ArrayList<>();
@@ -120,5 +174,10 @@ public class AddUserActivity extends Activity {
     protected void onPause() {
         listOfUsers.updateFile();
         super.onPause();
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {      /// was overided with popup menu , why
+
     }
 }
